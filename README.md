@@ -6,17 +6,9 @@
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.0%2B-FF4B4B)
 ![Together AI](https://img.shields.io/badge/Together_AI-Powered-blueviolet)
 
-<div align="center">
-  <img src="https://i.imgur.com/DI1zNrg.png" alt="App Banner" width="80%">
-</div>
-
 ## 🚀 Overview
 
 A modern Streamlit application that leverages Together AI's powerful LLMs to generate Python code based on text descriptions. Simply enter what you want your code to do, and the AI will craft a solution for you!
-
-<div align="center">
-  <img src="https://i.imgur.com/K0tCMI8.gif" alt="Demo GIF" width="70%">
-</div>
 
 ## ✨ Features
 
