@@ -167,4 +167,4 @@ if generate_button:
         st.warning("⚠️ Please enter a description first.")
 
 # Footer
-st.markdown('<div class="footer">Created with ❤️ by your friendly data analyst Patrick Scott | Python Code Generator powered by Together AI and Streamlit</div>', unsafe_allow_html=True) 
+st.markdown('<div class="footer">Created with ❤️ by your friendly neighborhood Data Analyst Patrick Scott | Python Code Generator powered by Together AI and Streamlit</div>', unsafe_allow_html=True) 
