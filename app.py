@@ -39,8 +39,23 @@ if st.button("Generate Code"):
                     stop=["```"]
                 )
                 
-                # Extract the generated code
-                generated_code = response['output']['text'].strip()
+                # Extract the generated code - handle different response formats
+                if isinstance(response, dict):
+                    # Show response structure for debugging (hidden in production)
+                    st.write("Response keys:", list(response.keys()))
+                    
+                    if 'output' in response and 'text' in response['output']:
+                        generated_code = response['output']['text'].strip()
+                    elif 'choices' in response and len(response['choices']) > 0:
+                        generated_code = response['choices'][0].get('text', '').strip()
+                    elif 'generated_text' in response:
+                        generated_code = response['generated_text'].strip()
+                    else:
+                        # Try a different access pattern based on Together AI docs
+                        generated_code = response.get('text', str(response)).strip()
+                else:
+                    # If response is not a dict, convert to string
+                    generated_code = str(response).strip()
                 
                 # Display the generated code
                 st.subheader("Generated Python Code:")
@@ -48,6 +63,10 @@ if st.button("Generate Code"):
         except Exception as e:
             st.error(f"An error occurred: {str(e)}")
             st.info("Please check your API key and internet connection.")
+            
+            # Display more detailed error information for debugging
+            import traceback
+            st.code(traceback.format_exc(), language="python")
     else:
         st.error("Please enter a description first.")
 
