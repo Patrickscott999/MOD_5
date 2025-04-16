@@ -1,2 +1,4 @@
 streamlit
-together 
+together
+streamlit-lottie
+requests 
