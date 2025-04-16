@@ -30,10 +30,10 @@ if st.button("Generate Code"):
     if user_input:
         try:
             with st.spinner("Generating code..."):
-                # API call to Together AI
+                # API call to Together AI using a serverless model
                 response = together.Complete.create(
                     prompt=f"Write Python code for the following task: {user_input}\nProvide only the code with no explanations:\n```python\n",
-                    model="togethercomputer/llama-2-70b",
+                    model="mistralai/Mistral-7B-Instruct-v0.2",
                     max_tokens=1000,
                     temperature=0.2,
                     stop=["```"]
